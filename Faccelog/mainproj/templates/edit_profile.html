@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href={% static 'favicon.png' %}>
+    <link rel="stylesheet" href=" {% static 'style.css' %} ">
+    <title>Edit Profile</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a href="{% url 'welcome' %}" class="home">Home</a>
+        <a href="{% url 'view_profile' %}" class="view profile">View Profile</a>
+        <a href="" class="edit-profile">Edit Profile</a>
+        <a href="{% url 'logout' %}" class="logout">Logout</a>
+        {% if messages %}
+        <div class="popup" id="popup">
+            {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            {% endfor %}
+        <button type="button" onclick="closePopup()">ok</button>
+        </div>
+    {% endif %}
+    <div class="viewdetail-box">
+        <form action={% url 'update' %} method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Edit Profile</h2>
+            <label for="txt_fn">Name</label><br>
+            <input type="text" name="txt_name"   value="{{user_info.user_name}}" required><br>
+            <label for="txt_uid"  >User ID</label><br>
+            <input type="text" name="txt_uid" placeholder="User ID should be unique" value="{{user_info.user_id}}" readonly><br>
+            <label for="txt_email" >Email</label><br>
+            <input type="text" name="txt_email" value='{{user_info.email}}' required><br>
+            <label for="image" >Image</label><br>
+            <img  src="{{ user_info.image.url }}" id="user-img"><br>
+            <input type="file" name="image" ><br>
+            <input type="submit" id ="submit" name = "Update" value="Update Account" >
+            <input type="submit" id ="delete" name = "Delete" value="Delete Account" >
+
+        </form>
+    </div>
+   
+    <script>
+        let popup=document.getElementById("popup");
+         function closePopup(){
+            popup.classList.add("open-popup")
+         }
+       </script>
+</body>
+
+</html>

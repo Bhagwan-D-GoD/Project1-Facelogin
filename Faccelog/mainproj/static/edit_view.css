@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgba(76, 76, 218, 0.501);
+    background-image: url("bg.jpg"); 
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+.nav-bar{
+    margin: 0px;
+    padding: 0;
+    background-color: rgba(24, 22, 22, 0.86);
+    width: 100%;
+    font-family: sans-serif;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.nav-bar a{
+    text-decoration: none;
+    color: rgb(226, 233, 239);
+    font-size: 16px;
+    padding-left: 20px;
+}
+.logout{
+    position: absolute;
+    right: 2%;
+}
+.nav-bar a:hover{
+    cursor: pointer;
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.viewdetail-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(8, 8, 8, 0.733);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+}
+/* .viewdetail-box img{
+    width: 75px;
+    height: 75px;
+    position: absolute;
+    left: 40%;
+    top: -18%;
+    border: none;
+    border-radius: 100px; */
+/* } */
+.viewdetail-box h2
+{
+    padding: 0%;
+    text-align: center;
+    padding-bottom: 20px;
+}
+.viewdetail-box label{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: rgb(80, 125, 162);
+}
+.viewdetail-box input{
+    width: 100%;
+    margin-bottom: 20px;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: aliceblue;
+    border-bottom: 1px solid rgb(226, 169, 169);
+    height: 40px;
+}
+.viewdetail-box input[type="submit"]{
+    border: 1px solid rgb(1, 1, 1);
+    width: 32%;
+    margin-left: 102px;
+    color: whitesmoke;
+    border-radius: 20px;
+    background-color: rgba(16, 33, 46, 0.718);
+}
+.viewdetail-box input[type="submit"]:hover{
+    cursor: pointer;
+    background: rgba(1, 19, 34, 0.964);
+}
+
+.createaccount{
+    position: relative;
+    margin: 0;
+    width: 40%;
+    padding: 0;
+   
+}
+.button1{
+    background-color:rgba(16, 33, 46, 0.718);
+    border-radius: 10px;
+    color: rgb(244, 244, 244);
+    border-color: rgba(17, 17, 17, 0.859);
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    width: 108px;
+    text-align: justify;
+    
+}
+.createaccount a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.button1:hover{
+    cursor: pointer;
+    background: rgba(1, 19, 34, 0.964);
+
+}
+.viewdetail-box input[type="file"]{
+    width: 60%;
+    margin-bottom: 36px;
+    border: none;
+    background: transparent;
+    outline: none;
+    color: aliceblue;
+    height: 40px;
+   
+}
+.popup{
+    position: absolute;
+    top: 9%;
+    left: 1%;
+    width: 322px;
+    padding: 7px 30px 30px;
+    background: transparent;
+    text-align: left;
+    border : 2px,solid,black;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+    border-radius: 10px;
+    visibility: visible;
+}
+.open-popup{
+    visibility:hidden
+}
+.popup p{
+    padding-bottom: 20px;
+}
+.popup button{
+    position: absolute;
+    left: 36%;
+    width: 19%;
+    text-align: center;
+    background-color: rgba(19, 14, 24, 0.919);
+    color: rgb(169, 169, 169);
+    border-radius: 20px;
+    padding-bottom: 0px;
+}
+.popup button:hover{
+    cursor: pointer;
+    color: rgb(14, 14, 14);
+    background: rgb(247, 247, 248);
+    
+}
+
+#user-img{
+    width: 90px;
+    height:90px
+}

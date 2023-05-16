@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href={% static 'favicon.png' %}>
+    <link rel="stylesheet" href=" {% static 'style.css' %} ">
+    <title>View Profile</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <a href="{% url 'welcome' %}" class="home">Home</a>
+        <a href="" class="view profile">View Profile</a>
+        <a href="{% url 'edit_profile' %}" class="edit-profile">Edit Profile</a>
+        <a href="{% url 'logout' %}" class="logout">Logout</a>
+        {% if messages %}
+        <div class="popup" id="popup">
+            {% for message in messages %}
+                <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+            {% endfor %}
+        <button type="button" onclick="closePopup()">ok</button>
+        </div>
+    {% endif %}
+    <div class="viewdetail-box">
+            <br><h2>View Profile</h2>
+            <label for="txt_fn">Name</label><br>
+            <input type="text" name="txt_name"   value="{{user_info.user_name}}"readonly><br>
+            <label for="txt_uid"  >User ID</label><br>
+            <input type="text" name="txt_uid" placeholder="User ID should be unique" readonly value="{{user_info.user_id}}"><br>
+            <label for="txt_email" >Email</label><br>
+            <input type="text" name="txt_email" readonly value= "{{user_info.email}}" ><br>
+            <img  src="{{ user_info.image.url }}" id="viewuser-img"><br>
+    
+    </div>
+   
+    <script>
+        let popup=document.getElementById("popup");
+         function closePopup(){
+            popup.classList.add("open-popup")
+         }
+       </script>
+</body>
+
+</html>
